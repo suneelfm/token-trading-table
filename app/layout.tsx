@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Grid } from "@mui/material";
+import Header from "@/components/organisms/Header";
+import {
+  SettingsOutlined,
+  ShowChart,
+  StarBorderPurple500,
+} from "@mui/icons-material";
+import Footer from "@/components/organisms/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +35,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Header />
+        <Grid
+          container
+          display={{ xs: "none", sm: "flex" }}
+          className="border-b border-b-[#22242d80] h-[25px] items-center text-[#777a8c]"
+          px={"18px"}
+        >
+          <SettingsOutlined sx={{ fontSize: "13px" }} />
+          <Grid height={"60%"} borderLeft={"1px solid #22242d"} mx={"10px"} />
+          <StarBorderPurple500 sx={{ fontSize: "16px", mr: "15px" }} />
+          <ShowChart sx={{ fontSize: "14px" }} />
+          <Grid height={"60%"} borderLeft={"1px solid #22242d"} mx={"10px"} />
+        </Grid>
+        <Grid
+          container
+          height={{ xs: "calc(100vh - 70px)", sm: "calc(100vh - 113px)" }}
+          className="overflow-y-auto p-[22px]"
+        >
+          {children}
+        </Grid>
+        <Footer />
       </body>
     </html>
   );

@@ -11,7 +11,7 @@ const ICON = {
       fontSize={"20px"}
       className="w-[15px] h-[15px] sm:w-[33px] sm:h-[33px]"
     >
-      <g clip-path="url(#clip0_88_28967)">
+      <g clipPath="url(#clip0_88_28967)">
         <path
           d="M24.1384 17.3876H11.8623L18.0001 7.00012L24.1384 17.3876Z"
           fill="currentColor"
